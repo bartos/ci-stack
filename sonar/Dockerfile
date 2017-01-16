@@ -9,9 +9,9 @@ EXPOSE 9092
 
 ENV SONAR_VERSION=6.2
 ENV SONAR_HOME=/opt/sonar
-#ADD https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-${SONAR_VERSION}.zip ${SONAR_HOME}/sonar.zip
-ADD sonarqube-${SONAR_VERSION}.zip ${SONAR_HOME}/sonar.zip
- RUN unzip ${SONAR_HOME}/sonar.zip \
+ADD https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-${SONAR_VERSION}.zip ${SONAR_HOME}/sonar.zip
+#ADD sonarqube-${SONAR_VERSION}.zip ${SONAR_HOME}/sonar.zip
+RUN unzip ${SONAR_HOME}/sonar.zip \
      && mv sonarqube-${SONAR_VERSION}/* ${SONAR_HOME} \
      && rm ${SONAR_HOME}/sonar.zip
 
