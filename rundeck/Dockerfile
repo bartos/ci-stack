@@ -1,5 +1,7 @@
 FROM centos:7
 
+EXPOSE 4440
+
 RUN yum install java-1.8.0-openjdk -y
 RUN rpm -Uvh http://repo.rundeck.org/latest.rpm 
 RUN yum install rundeck -y && yum clean all
