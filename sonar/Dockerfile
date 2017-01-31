@@ -15,7 +15,7 @@ RUN unzip ${SONAR_HOME}/sonar.zip \
      && mv sonarqube-${SONAR_VERSION}/* ${SONAR_HOME} \
      && rm ${SONAR_HOME}/sonar.zip
 
-ADD run.sh $SONAR_HOME/bin
+#ADD run.sh $SONAR_HOME/bin
 ADD custom_logo.svg $SONAR_HOME/web/images/custom_logo.svg
 #plugins
 ADD http://central.maven.org/maven2/org/sonarsource/dotnet/sonar-csharp-plugin/5.6.0.586/sonar-csharp-plugin-5.6.0.586.jar $SONAR_HOME/extensions/plugins/sonar-csharp-plugin-5.6.0.586.jar
