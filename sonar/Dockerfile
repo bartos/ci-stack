@@ -1,6 +1,4 @@
 FROM centos:7
-
-MAINTAINER Bartłomiej Dróżdż <bdrozdz@gmail.com>
 RUN yum -y install java-1.8.0-openjdk unzip && yum clean all
 
 EXPOSE 9000
@@ -15,12 +13,12 @@ RUN unzip ${SONAR_HOME}/sonar.zip \
      && mv sonarqube-${SONAR_VERSION}/* ${SONAR_HOME} \
      && rm ${SONAR_HOME}/sonar.zip
 
-ADD run.sh $SONAR_HOME/bin
-ADD custom_logo.svg $SONAR_HOME/web/images/custom_logo.svg
+#ADD run.sh $SONAR_HOME/bin
+#ADD custom_logo.svg $SONAR_HOME/web/images/custom_logo.svg
 #plugins
-ADD http://central.maven.org/maven2/org/sonarsource/dotnet/sonar-csharp-plugin/5.6.0.586/sonar-csharp-plugin-5.6.0.586.jar $SONAR_HOME/extensions/plugins/sonar-csharp-plugin-5.6.0.586.jar
-ADD http://central.maven.org/maven2/org/sonarsource/java/sonar-java-plugin/4.4.0.8066/sonar-java-plugin-4.4.0.8066.jar $SONAR_HOME/extensions/plugins/sonar-java-plugin-4.4.0.8066.jar
-ADD http://central.maven.org/maven2/org/sonarsource/web/sonar-web-plugin/2.5.0.476/sonar-web-plugin-2.5.0.476.jar $SONAR_HOME/extensions/plugins/sonar-web-plugin-2.5.0.476.jar
+#ADD http://central.maven.org/maven2/org/sonarsource/dotnet/sonar-csharp-plugin/5.6.0.586/sonar-csharp-plugin-5.6.0.586.jar $SONAR_HOME/extensions/plugins/sonar-csharp-plugin-5.6.0.586.jar
+#ADD http://central.maven.org/maven2/org/sonarsource/java/sonar-java-plugin/4.4.0.8066/sonar-java-plugin-4.4.0.8066.jar $SONAR_HOME/extensions/plugins/sonar-java-plugin-4.4.0.8066.jar
+#ADD http://central.maven.org/maven2/org/sonarsource/web/sonar-web-plugin/2.5.0.476/sonar-web-plugin-2.5.0.476.jar $SONAR_HOME/extensions/plugins/sonar-web-plugin-2.5.0.476.jar
 
 WORKDIR ${SONAR_HOME}
 VOLUME ["$SONAR_HOME/conf","$SONAR_HOME/data","$SONAR_HOME/logs"]
