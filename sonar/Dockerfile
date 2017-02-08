@@ -14,7 +14,11 @@ RUN unzip ${SONAR_HOME}/sonar.zip \
      && rm ${SONAR_HOME}/sonar.zip
 
 #ADD run.sh $SONAR_HOME/bin
+<<<<<<< HEAD
 #ADD custom_logo.svg $SONAR_HOME/web/images/custom_logo.svg
+=======
+ADD custom_logo.svg $SONAR_HOME/web/images/custom_logo.svg
+>>>>>>> 65844839ed5fa8aa96a670e42b630ecb2c7ef433
 #plugins
 #ADD http://central.maven.org/maven2/org/sonarsource/dotnet/sonar-csharp-plugin/5.6.0.586/sonar-csharp-plugin-5.6.0.586.jar $SONAR_HOME/extensions/plugins/sonar-csharp-plugin-5.6.0.586.jar
 #ADD http://central.maven.org/maven2/org/sonarsource/java/sonar-java-plugin/4.4.0.8066/sonar-java-plugin-4.4.0.8066.jar $SONAR_HOME/extensions/plugins/sonar-java-plugin-4.4.0.8066.jar
