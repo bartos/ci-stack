@@ -28,7 +28,6 @@ CMD java -jar lib/sonar-application-$SONAR_VERSION.jar \
     -Dsonar.jdbc.username="$SONAR_JDBC_USERNAME" \
     -Dsonar.jdbc.password="$SONAR_JDBC_PASSWORD" \
     -Dsonar.jdbc.url="$SONAR_JDBC_URL" \
-    -Dsonar.web.javaAdditionalOpts="-Djava.security.egd=file:/dev/./urandom" \
-    -Dsonar.lf.logoUrl="/images/custom_logo.svg"
+    -Dsonar.web.javaAdditionalOpts="-Djava.security.egd=file:/dev/./urandom" 
     
 
